@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fashe</title>
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .shipping {
+            background-color: #111;
+            color: white;
+
+            height: 35px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 11px;
+        }
+
+
+
+        .header {
+            background-color: white;
+
+            height: 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 14%;
+        }
+
+
+
+
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 21px;
+        }
+
+        h2 span {
+            color: red;
+        }
+
+
+      
+
+        .like {
+            display: flex;
+
+            gap: 27px;
+
+            align-items: center;
+        }
+
+        .like a {
+            text-decoration: none;
+
+            color: black;
+
+            font-size: 13px;
+        }
+
+        .like a:hover {
+            color: #f04b36;
+        }
+
+
+    
+        .coment {
+            display: flex;
+
+            align-items: center;
+
+            gap: 22px;
+        }
+
+        .coment i {
+            font-size: 18px;
+
+            cursor: pointer;
+        }
+
+        .coment .person {
+            font-size: 21px;
+        }
+
+        #img {
+            width: 100%;
+
+            height: 690px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        #img img {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        #img::after {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.32);
+
+            z-index: 1;
+        }
+
+        .hero-text {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            text-align: center;
+
+            color: white;
+
+            width: 600px;
+
+            z-index: 2;
+        }
+
+
+        .hero-text small {
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            font-weight: 500;
+        }
+
+
+        .hero-text h1 {
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 64px;
+
+            line-height: 1.08;
+
+            margin: 18px 0 55px;
+
+            font-weight: 700;
+        }
+
+
+        .hero-text p {
+            font-size: 14px;
+
+            margin-bottom: 30px;
+        }
+
+
+    
+        .hero-text button {
+            padding: 15px 30px;
+
+            border: none;
+
+            background-color: white;
+
+            color: black;
+
+            font-size: 11px;
+
+            cursor: pointer;
+        }
+
+        .hero-text button:hover {
+            background-color: #f1f1f1;
+        }
+
+
+      
+        .features {
+            height: 50px;
+
+            background-color: #111;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-around;
+
+            overflow: hidden;
+        }
+
+
+        .features p {
+            font-size: 11px;
+
+            white-space: nowrap;
+        }
+
+
+       
+
+        @media (max-width: 900px) {
+
+            .header {
+                padding: 0 5%;
+            }
+
+            .hero-text h1 {
+                font-size: 48px;
+            }
+
+            .hero-text {
+                width: 90%;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .header {
+                height: 65px;
+            }
+
+            .like {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            #img {
+                height: 550px;
+            }
+
+            .hero-text p {
+                font-size: 12px;
+            }
+
+            .features {
+                gap: 40px;
+                justify-content: flex-start;
+                padding-left: 20px;
+            }
+
+        }
+        .category-heading {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+
+    margin-left: 13%;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+    
+.categories {
+    display: flex;
+    gap: 20px;
+    padding: 20px 5% 60px;
+}
+
+
+.category-card {
+    width: 33.33%;
+
+    height: 580px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+
+
+.category-card img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+
+
+.category-name {
+    position: absolute;
+
+    left: 4%;
+    right: 4%;
+    bottom: 30px;
+
+    height: 52px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    font-size: 13px;
+}
+
+
+
+
+.category-name i {
+    font-size: 17px;
+
+    font-style: normal;
+}
+
+
+
+
+.category-card:hover img {
+    transform: scale(1.03);
+
+    transition: 0.4s;
+}
+
+
+
+
+@media (max-width: 700px) {
+
+    .categories {
+        flex-direction: column;
+
+        padding: 30px 20px;
+    }
+
+    .category-card {
+        width: 100%;
+
+        height: 500px;
+    }
+
+}
+
+.new-arrivals {
+    padding: 70px 7.5% 80px;
+}
+
+
+
+
+.arrivals-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 45px;
+}
+
+
+.arrivals-heading small {
+    display: block;
+
+    color: #9b6d72;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+
+.arrivals-heading h2 {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 36px;
+
+    line-height: 1;
+
+    color: #111;
+}
+
+
+.view-all {
+    background: white;
+
+    border: 1px solid #222;
+
+    padding: 13px 19px;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+.view-all:hover {
+    background: #111;
+
+    color: white;
+}
+
+
+
+.products {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 24px;
+}
+
+
+
+
+.product {
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.product img {
+    width: 100%;
+
+    height: 430px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.4s;
+}
+
+
+
+.product:hover img {
+    transform: scale(1.03);
+}
+
+.sale {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    background: #d65a42;
+
+    color: white;
+
+    padding: 5px 10px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    z-index: 2;
+}
+
+
+
+
+@media (max-width: 900px) {
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .new-arrivals {
+        padding: 50px 20px;
+    }
+
+    .arrivals-top {
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .arrivals-heading h2 {
+        font-size: 28px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .product img {
+        height: 500px;
+    }
+
+}
+
+
+.product-info {
+    padding-top: 10px;
+}
+
+
+.product-name {
+    font-size: 14px;
+
+    color: #111;
+
+    margin-bottom: 9px;
+}
+
+
+.price {
+    font-size: 13px;
+
+    color: #111;
+
+    margin-bottom: 12px;
+}
+
+
+
+.sale-price {
+    color: #d65a42;
+}
+
+
+.sale-price del {
+    color: #888;
+
+    margin-left: 8px;
+}
+
+
+
+
+.color {
+    display: block;
+
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+
+    border: 1px solid #ddd;
+}
+
+
+
+
+.color-beige {
+    background: #e8dfcc;
+}
+
+.color-black {
+    background: #111;
+}
+
+.color-brown {
+    background: #b27b42;
+}
+
+.color-white {
+    background: #f5f5f5;
+}
+
+.more-products {
+    padding: 20px 7.5% 80px;
+}
+
+
+.more-product-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 24px;
+}
+
+
+.more-product img {
+    width: 100%;
+
+    height: 430px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.4s;
+}
+
+
+.more-product:hover img {
+    transform: scale(1.03);
+}
+
+
+.more-info {
+    padding-top: 10px;
+}
+
+
+.more-info p {
+    font-size: 14px;
+
+    color: #111;
+
+    margin-bottom: 10px;
+}
+
+
+.more-info span {
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+}
+
+
+.dot {
+    display: block;
+
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+
+    border: 1px solid #ddd;
+}
+
+
+
+.blue {
+    background-color: #34598d;
+}
+
+.beige {
+    background-color: #d7c19d;
+}
+
+.dark-blue {
+    background-color: #263752;
+}
+
+.brown {
+    background-color: #76502f;
+}
+
+
+
+@media (max-width: 900px) {
+
+    .more-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .more-products {
+        padding: 20px;
+    }
+
+    .more-product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .more-product img {
+        height: 500px;
+    }
+
+}
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <p class="shipping">
+            30 day returns, no questions asked
+        </p>
+
+    </header>
+    <div class="header">
+
+
+
+        <div class="sub">
+
+            <h2>
+                <strong>Fashe</strong><span>.</span>
+            </h2>
+
+        </div>
+
+        <div class="like">
+
+            <a href="">Home</a>
+
+            <a href="">Shop</a>
+
+            <a href="">Product</a>
+
+            <a href="">Blog</a>
+
+            <a href="">About</a>
+
+            <a href="">Contact</a>
+
+        </div>
+
+        <div class="coment">
+
+            <i class="bi bi-search"></i>
+
+            <i class="bi bi-person person"></i>
+
+            <i class="bi bi-handbag"></i>
+
+        </div>
+
+
+    </div>
+
+    <div id="img">
+
+        <img src="hero-1.jpg" alt="Fashion">
+        <div class="hero-text">
+
+            <small>NEW SEASON</small>
+
+            <h1>
+                New season<br>
+                essentials
+            </h1>
+
+            <p>
+                Considered pieces, made to be worn every day.
+            </p>
+
+            <button>
+                SHOP NOW
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+  
+    <div class="features">
+
+        <p>Carbon neutral delivery</p>
+
+        <p>Natural fibres only</p>
+
+        <p>Free shipping over $100</p>
+
+        <p>30 day returns</p>
+
+        <p>Carbon neutral delivery</p>
+
+        <p>Natural fibres only</p>
+
+    </div>
+
+<h2 class="category-heading">Shop by category</h2>
+
+<section class="categories">
+
+    <div class="category-card">
+
+        <img src="collection-clothing.jpg" alt="Clothing">
+
+        <div class="category-name">
+            <span>Clothing</span>
+            <i class="bi bi-arrow-right"></i>
+        </div>
+
+    </div>
+
+
+    <div class="category-card">
+
+        <img src="collection-jewellery.jpg" alt="Jewellery">
+
+        <div class="category-name">
+            <span>Jewellery</span>
+            <i class="bi bi-arrow-right"></i>
+        </div>
+
+    </div>
+
+
+    <div class="category-card">
+
+        <img src="collection-bags.jpg" alt="Bags">
+
+        <div class="category-name">
+            <span>Bags</span>
+            <i class="bi bi-arrow-right"></i>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<section class="new-arrivals">
+
+    <div class="arrivals-top">
+
+        <div class="arrivals-heading">
+            <small>JUST LANDED</small>
+            <h2>New arrivals</h2>
+        </div>
+
+        <button class="view-all">VIEW ALL</button>
+
+    </div>
+
+
+    <div class="products">
+
+
+
+        <div class="product">
+
+            <img src="product-poncho.jpg" alt="Cotton Knit Poncho">
+
+            <div class="product-info">
+
+                <p class="product-name">
+                    Cotton Knit Poncho
+                </p>
+
+                <p class="price">
+                    $89.00
+                </p>
+
+                <span class="color color-beige"></span>
+
+            </div>
+
+        </div>
+
+
+        
+
+        <div class="product">
+
+            <img src="product-biker-jacket.jpg" alt="Leather Biker Jacket">
+
+            <div class="product-info">
+
+                <p class="product-name">
+                    Leather Biker Jacket
+                </p>
+
+                <p class="price">
+                    $249.00
+                </p>
+
+                <span class="color color-black"></span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="product">
+
+            <span class="sale">SALE</span>
+
+            <img src="product-bomber.jpg" alt="Suede Bomber Jacket">
+
+            <div class="product-info">
+
+                <p class="product-name">
+                    Suede Bomber Jacket
+                </p>
+
+                <p class="price sale-price">
+                    $189.00
+                    <del>$220.00</del>
+                </p>
+
+                <span class="color color-brown"></span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="product">
+
+            <img src="product-tee.jpg" alt="Graphic Cotton Tee">
+
+            <div class="product-info">
+
+                <p class="product-name">
+                    Graphic Cotton Tee
+                </p>
+
+                <p class="price">
+                    $39.00
+                </p>
+
+                <span class="color color-white"></span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+</section>
+
+
+<section class="more-products">
+
+    <div class="more-product-grid">
+
+
+        <div class="more-product">
+
+            <img src="product-suit.jpg" alt="Tailored Three-Piece Suit">
+
+            <div class="more-info">
+
+                <p>Tailored Three-Piece Suit</p>
+
+                <span>$429.00</span>
+
+                <i class="dot blue"></i>
+
+            </div>
+
+        </div>
+
+
+        
+
+        <div class="more-product">
+
+            <img src="collection-bags.jpg" alt="Canvas Tote Bag">
+
+            <div class="more-info">
+
+                <p>Canvas Tote Bag</p>
+
+                <span>$45.00</span>
+
+                <i class="dot beige"></i>
+
+            </div>
+
+        </div>
+
+
+   
+        <div class="more-product">
+
+            <img src="product-backpack.jpg" alt="Everyday Backpack">
+
+            <div class="more-info">
+
+                <p>Everyday Backpack</p>
+
+                <span>$120.00</span>
+
+                <i class="dot dark-blue"></i>
+
+            </div>
+
+        </div>
+
+
+       
+
+        <div class="more-product">
+
+            <img src="product-wallet.jpg" alt="Bifold Leather Wallet">
+
+            <div class="more-info">
+
+                <p>Bifold Leather Wallet</p>
+
+                <span>$59.00</span>
+
+                <i class="dot brown"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+</body>
+
+</html>
